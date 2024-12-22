@@ -1,0 +1,11 @@
+.aside-menu{
+    max-width: 500px;
+    min-width: 300px;
+    width: auto;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+.main-content{
+    width: 100%;
+}
