@@ -40,7 +40,7 @@ const BilllingHeader = ({ userData }: { userData: User | null }) => {
         <Modal.Body>
           <ul>
             <li onClick={handleSave} className='li-changed-option'>Felhasználom a számlánál</li>
-            <li onClick={handleSave} className='x'>Tárcához adom</li>
+            <li onClick={handleSave} className='li-changed-option'>Tárcához adom</li>
           </ul>
         </Modal.Body>
         <Modal.Footer>
