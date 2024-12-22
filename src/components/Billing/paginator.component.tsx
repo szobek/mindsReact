@@ -12,9 +12,9 @@ const Paginator = ({ actualPage, modifyPage, allInvoicesPages }: { actualPage: n
     return (<div className='invoicesPaginatorContainer'>
         <button disabled={Number(actualPage) === 1 ? true : false} onClick={(event) => { setActualPage("-", event) }}>prev</button>
         {paginatorArray.map((elem,index) => {
-            return <>
-                <button key={index} className={elem == actualPage ? 'colorized' : ''} onClick={modifyPage} data-page={elem}>{elem}</button>
-            </>
+            return <span  key={index}>
+                <button  className={elem == actualPage ? 'page colorized' : 'page'}  onClick={modifyPage} data-page={elem}>{elem}</button>
+            </span>
         }
         )
         }
