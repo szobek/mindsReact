@@ -37,6 +37,8 @@ const handleAddressSave = () => {
       <li>Város: {userData?.address.city}</li>
       <li>Ir.szám: {userData?.address.zipcode}</li>
       <li>utca és házszám: {userData?.address.suite}</li>
+      <li>Név: {userData?.name}</li>
+      <li>Nicknév: {userData?.username}</li>
     </ul>;
   }
 
@@ -77,6 +79,11 @@ const handleAddressSave = () => {
           <div className="form-group">
             <label htmlFor="formGroupCityInput">Város</label>
             <input type="text" className="form-control" id="formGroupCityInput" placeholder="Város" defaultValue={userData?.address.city} onChange={handleChage}/>
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="formGroupNicknameInput">Nicknév</label>
+            <input type="text" className="form-control" id="formGroupNicknameInput" placeholder="Nicknév" defaultValue={userData?.username} onChange={handleChage}/>
           </div>
         </form>
         <Button variant="secondary" onClick={()=>{
