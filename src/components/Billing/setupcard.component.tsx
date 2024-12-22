@@ -62,7 +62,7 @@ const handleAddressSave = () => {
       }
     }} animation={false}>
       <Modal.Header closeButton>
-        <Modal.Title>Token átvátása ({userData?.phone.substring(9)})</Modal.Title>
+        <Modal.Title>Cím szerkesztése</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <form>
