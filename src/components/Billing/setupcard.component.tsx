@@ -3,31 +3,36 @@ import { User } from '../../models/User';
 import './setupcard.component.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-const Card = ({ title, content, userData,setUserData }: { title: string, content: string, userData: User | null,setUserData:any }) => {
+const Card = ({ title, content, userData, setUserData }: { title: string, content: string, userData: User | null, setUserData: any }) => {
   const [modalAddressShow, setmodalAddressShow] = useState(false);
-  const [changedUserData,setChangedUserData ] = useState(userData);
- 
-const handleChage=(e:any)=>{
-  if(userData){
-    const newUserData={...userData,name:e.target.value,phone:userData.phone,address:{...userData.address,city:e.target.value}}
-    setChangedUserData(newUserData)
-    
-  }
-}
+  const [formData, setFormData] = useState<any>({...userData});
+Object.assign(formData,userData);
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    if (name.includes('.')) {
+      let keys = name.split('.');
+      formData[keys[0]][keys[1]] = value;
+    } else {
+      if(formData!=null){
 
-const handleAddressClose = () => setmodalAddressShow(false);
-const handleAddressShow = () => setmodalAddressShow(true);
-const handleAddressSave = () => {
-  fetch('https://jsonplaceholder.typicode.com/users/5', {
-    method: 'PUT',
-    body: JSON.stringify(changedUserData),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
-  .then(() => {
-    alert("mentve a cím")
-    setUserData(changedUserData)
+        formData[name] = value;
+      }
+    }
+    setFormData((prevFormData: any) => ({ ...prevFormData, ...formData }));
+  };
+  const handleAddressClose = () => setmodalAddressShow(false);
+  const handleAddressShow = () => setmodalAddressShow(true);
+  const handleAddressSave = () => {
+    fetch('https://jsonplaceholder.typicode.com/users/5', {
+      method: 'PUT',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then(() => {
+        alert("mentve a cím")
+        setUserData(formData)
         setmodalAddressShow(false)
       })
   }
@@ -68,25 +73,29 @@ const handleAddressSave = () => {
       </Modal.Header>
       <Modal.Body>
         <form>
+
           <div className="form-group" >
             <label htmlFor="formGroupNameInput">Name</label>
-            <input type="text" className="form-control" id="formGroupNameInput" placeholder="Név" defaultValue={userData?.name} onChange={handleChage} />
+            <input type="text" name='name' className="form-control" id="formGroupNameInput" placeholder="Név" value={formData?.name} onChange={handleChange} />
           </div>
-          <div className="form-group">
-            <label htmlFor="formGroupPhoneInput">Phone</label>
-            <input type="text" className="form-control" id="formGroupPhoneInput" placeholder="Telefon" defaultValue={userData?.phone}/>
+
+          <div className="form-group" >
+            <label htmlFor="formGroupUsernameInput">Username</label>
+            <input type="text" name='username' className="form-control" id="formGroupUsernameInput" placeholder="Nicknév" value={formData?.username} onChange={handleChange} />
           </div>
-          <div className="form-group">
-            <label htmlFor="formGroupCityInput">Város</label>
-            <input type="text" className="form-control" id="formGroupCityInput" placeholder="Város" defaultValue={userData?.address.city} onChange={handleChage}/>
+
+          <div className="form-group" >
+            <label htmlFor="formGroupEmailInput">Email</label>
+            <input type="text" name='email' className="form-control" id="formGroupEmailInput" placeholder="Nicknév" value={formData?.email} onChange={handleChange} />
           </div>
-          
-          <div className="form-group">
-            <label htmlFor="formGroupNicknameInput">Nicknév</label>
-            <input type="text" className="form-control" id="formGroupNicknameInput" placeholder="Nicknév" defaultValue={userData?.username} onChange={handleChage}/>
+
+          <div className="form-group" >
+            <label htmlFor="formGroupAddressCityInput">City</label>
+            <input type="text" name='address.city' className="form-control" id="formGroupAddressCityInput" placeholder="Város" value={formData?.address?.city} onChange={handleChange} />
           </div>
+
         </form>
-        <Button variant="secondary" onClick={()=>{
+        <Button variant="secondary" onClick={() => {
           handleAddressSave()
         }}>
           Mentés
