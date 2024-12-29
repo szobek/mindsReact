@@ -1,4 +1,5 @@
+import ChartContainer from "./chartContainer.component"
 const StatistisContainer = ()=>{
-    return(<>statistics page</>)
+    return(<><ChartContainer /></>)
 }
 export default StatistisContainer

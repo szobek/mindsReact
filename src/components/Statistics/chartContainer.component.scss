@@ -1,0 +1,19 @@
+.chart-container{
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: auto;
+    display: grid;
+    gap: 40px;
+    padding: 30px 0;
+    position: relative;
+   .chart-card{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: white;
+    overflow: hidden;
+    min-height: 300px;
+       &.double{
+        grid-column: span 2;
+       }
+   }
+}
