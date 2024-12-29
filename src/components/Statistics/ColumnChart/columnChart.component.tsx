@@ -26,7 +26,7 @@ const ColumnChart = () => {
             }
         },
         title: {
-            text: 'Book Sales by Genre',
+            text: '',
             align: 'left'
         },
         legend: {

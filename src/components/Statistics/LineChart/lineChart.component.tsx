@@ -19,7 +19,6 @@ const LineChart = () => {
 
     return (
         <div>
-            <h1>Line Chart</h1>
             <HighchartsReact  highcharts={Highcharts} options={options} />
         </div>
     )

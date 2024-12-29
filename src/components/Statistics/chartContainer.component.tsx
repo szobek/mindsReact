@@ -7,7 +7,7 @@ const ChartContainer = () => {
 
     return (
         <div className='chart-container'>
-            <h1>ChartContainer...</h1>
+            <h1>Statisztika</h1>
             <div className="chart-card double">
                 <LineChart />
             </div>
