@@ -1,0 +1,19 @@
+
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+    .nav-link-item{
+        width: fit-content;
+        font-size: 20px;
+        text-decoration: none;
+        img{
+            margin-right: 25px;
+        }
+        &.active{
+            color: #3d3c3b;
+            text-decoration: underline;
+        }
+    }
+
+}
