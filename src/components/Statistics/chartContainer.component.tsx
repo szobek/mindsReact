@@ -1,5 +1,5 @@
 import LineChart from './LineChart/lineChart.component';
-import ColumnChart from './ColumnChart/columnChart.component';
+import ColumnChart from './ColumnChart/ColumnChart';
 import './chartContainer.component.scss';
 import PieChart from './PieChart/PieChart.component';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart.component';
