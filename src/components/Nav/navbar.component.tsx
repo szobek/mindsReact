@@ -9,6 +9,7 @@ const Navbar = () => {
   const listItems = menuItems.map((item) =>
     
   <NavLink
+    key={item.id}
     to={item.url}
     className="nav-link-item"
   >
