@@ -2,6 +2,7 @@ import LineChart from './LineChart/lineChart.component';
 import ColumnChart from './ColumnChart/columnChart.component';
 import './chartContainer.component.scss';
 import PieChart from './PieChart/PieChart.component';
+import SpiderwebChart from './SpiderWebChart/SpiderwebChart.component';
 const ChartContainer = () => {
 
 
@@ -16,7 +17,7 @@ const ChartContainer = () => {
                 <PieChart />
             </div>
             <div className="chart-card">
-                <ColumnChart />
+                <SpiderwebChart />
             </div>
             <div className="chart-card double">
                 <ColumnChart />
