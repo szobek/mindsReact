@@ -1,7 +1,7 @@
 import LineChart from './LineChart/LineChart';
 import ColumnChart from './ColumnChart/ColumnChart';
 import './chartContainer.component.scss';
-import PieChart from './PieChart/PieChart.component';
+import PieChart from './PieChart/PieChart';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart.component';
 
 const ChartContainer = () => {
