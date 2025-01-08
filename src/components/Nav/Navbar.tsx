@@ -1,6 +1,6 @@
 import {NavLink } from "react-router";
 import { Navitem } from "../../models/Nav";
-import "./navbar.component.scss";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const menuItems: Navitem[] = [
