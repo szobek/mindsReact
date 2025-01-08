@@ -6,13 +6,11 @@ import Modal from 'react-bootstrap/Modal';
 
 const BilllingHeader = ({ userData }: { userData: User | null }) => {
   const [modalShow, setmodalShow] = useState(false);
-
   const handleClose = () => setmodalShow(false);
   const handleShow = () => setmodalShow(true);
   const handleSave = () => {
     if (userData) {
       userData.phone = "256984562365"
-
       fetch('https://jsonplaceholder.typicode.com/users/5', {
         method: 'PUT',
         body: JSON.stringify(userData),
@@ -31,7 +29,6 @@ const BilllingHeader = ({ userData }: { userData: User | null }) => {
       <h1>Billing</h1>
       <span>{(userData != null) ? `${userData.phone.substring(9)} Token` : ""} </span>
       <button className='base-btn' onClick={handleShow}>token váltás</button>
-
       <Modal show={modalShow} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Token átvátása ({userData?.phone.substring(9)})</Modal.Title>
@@ -49,9 +46,7 @@ const BilllingHeader = ({ userData }: { userData: User | null }) => {
 
         </Modal.Footer>
       </Modal>
-
     </header>
   )
-
 }
 export default BilllingHeader

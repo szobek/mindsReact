@@ -15,7 +15,6 @@ Object.assign(formData,userData);
       formData[keys[0]][keys[1]] = value;
     } else {
       if(formData!=null){
-
         formData[name] = value;
       }
     }
@@ -74,27 +73,22 @@ Object.assign(formData,userData);
       </Modal.Header>
       <Modal.Body>
         <form>
-
           <div className="form-group" >
             <label htmlFor="formGroupNameInput">Name</label>
             <input type="text" name='name' className="form-control" id="formGroupNameInput" placeholder="Név" value={formData?.name} onChange={handleChange} />
           </div>
-
           <div className="form-group" >
             <label htmlFor="formGroupUsernameInput">Username</label>
             <input type="text" name='username' className="form-control" id="formGroupUsernameInput" placeholder="Nicknév" value={formData?.username} onChange={handleChange} />
           </div>
-
           <div className="form-group" >
             <label htmlFor="formGroupEmailInput">Email</label>
             <input type="text" name='email' className="form-control" id="formGroupEmailInput" placeholder="Nicknév" value={formData?.email} onChange={handleChange} />
           </div>
-
           <div className="form-group" >
             <label htmlFor="formGroupAddressCityInput">City</label>
             <input type="text" name='address.city' className="form-control" id="formGroupAddressCityInput" placeholder="Város" value={formData?.address?.city} onChange={handleChange} />
           </div>
-
         </form>
         <Button variant="secondary" onClick={() => {
           handleAddressSave()
@@ -110,11 +104,8 @@ Object.assign(formData,userData);
         }}>
           Bezár
         </Button>
-
       </Modal.Footer>
     </Modal>
-
-
   </>
   )
 }

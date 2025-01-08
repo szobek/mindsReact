@@ -8,9 +8,7 @@ import StatistisContainer from './components/Statistics/StatistisContainer'
 function App() {
   return (
     <>
-
       <main className='d-flex'>
-
         <div className='aside-menu d-flex'>
           <Navbar />
         </div>
@@ -22,7 +20,6 @@ function App() {
           </Routes>
         </div>
       </main>
-
     </>
   )
 }

@@ -1,7 +1,6 @@
 import UniversalChart from '../UniversalChart';
 
 const LineChart = () => {
-
     const options = {
         chart: {
           type: 'line'
@@ -19,7 +18,6 @@ const LineChart = () => {
     return (
         <div>
           <UniversalChart options={options}/>
-            
         </div>
     )
 }

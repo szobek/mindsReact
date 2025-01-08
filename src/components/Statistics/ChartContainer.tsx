@@ -5,9 +5,6 @@ import PieChart from './PieChart/PieChart';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart';
 
 const ChartContainer = () => {
-
-
-
     return (
         <div className='chart-container'>
             <h1>Statisztika</h1>

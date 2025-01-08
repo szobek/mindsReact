@@ -7,10 +7,7 @@ const InvoiceListTable = () => {
     const [invoiceListPageNumber, setinvoiceListPageNumber] = useState(1)
     const [allInvoicesRows, setAllInvoicesPages] = useState(0)
     const [selectedInvoices, setSelectedInvoices] = useState(0)
-
-
     const showInvoicePerPage: number = 7
-
     function setPageNum(num: any) {
         setinvoiceListPageNumber(num.target.dataset.page);
     }
@@ -20,7 +17,6 @@ const InvoiceListTable = () => {
             .then(json => {
                 setAllInvoicesPages(json.length);
             })
-
     }
     function getInvoicesFromDb() {
         fetch(`https://jsonplaceholder.typicode.com/todos?_page=${invoiceListPageNumber}&_limit=${showInvoicePerPage}`)
@@ -79,7 +75,6 @@ const InvoiceListTable = () => {
                 <tr>
                     <th>
                         <input onChange={handleCheckboxChangeAll} type="checkbox" checked={selectedInvoices === showInvoicePerPage} />
-
                     </th>
                     <th>Neve</th>
                     <th>Id </th>
