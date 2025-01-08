@@ -1,7 +1,6 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import highcharts3d from 'highcharts/highcharts-3d';
-
 highcharts3d(Highcharts);
 
 const ColumnChart = () => {

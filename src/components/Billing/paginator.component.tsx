@@ -1,4 +1,5 @@
 import './paginator.component.scss'
+
 const Paginator = ({ actualPage, modifyPage, allInvoicesPages }: { actualPage: number, modifyPage: any, allInvoicesPages: number }) => {
     let paginatorArray: any[] = []
     for (let i = 0; i < allInvoicesPages; i++)paginatorArray.push(i + 1)
