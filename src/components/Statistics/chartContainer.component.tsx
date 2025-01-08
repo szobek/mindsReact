@@ -1,4 +1,4 @@
-import LineChart from './LineChart/lineChart.component';
+import LineChart from './LineChart/LineChart';
 import ColumnChart from './ColumnChart/ColumnChart';
 import './chartContainer.component.scss';
 import PieChart from './PieChart/PieChart.component';
