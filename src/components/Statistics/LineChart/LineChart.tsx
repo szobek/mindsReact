@@ -1,4 +1,4 @@
-import UniversalChart from '../universalChart.component';
+import UniversalChart from '../UniversalChart';
 
 const LineChart = () => {
 
