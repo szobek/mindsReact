@@ -52,6 +52,6 @@ const ColumnChart = () => {
           },
         ],
       };
-    return (<><HighchartsReact highcharts={Highcharts} options={options} /></>)
+    return (<HighchartsReact highcharts={Highcharts} options={options} />)
 }
 export default ColumnChart;

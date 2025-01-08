@@ -1,6 +1,6 @@
 import ChartContainer from "./ChartContainer"
 
 const StatistisContainer = ()=>{
-    return(<><ChartContainer /></>)
+    return(<ChartContainer />)
 }
 export default StatistisContainer
