@@ -3,7 +3,7 @@ import './App.css'
 import BillingContainer from './components/Billing/BillingContainer'
 import Navbar from './components/Nav/Navbar'
 import HomeContainer from './components/Home/HomeContainer'
-import StatistisContainer from './components/Statistics/container.component'
+import StatistisContainer from './components/Statistics/StatistisContainer'
 
 function App() {
   return (
