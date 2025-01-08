@@ -1,6 +1,6 @@
 import LineChart from './LineChart/LineChart';
 import ColumnChart from './ColumnChart/ColumnChart';
-import './chartContainer.component.scss';
+import './ChartContainer.scss';
 import PieChart from './PieChart/PieChart';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart';
 

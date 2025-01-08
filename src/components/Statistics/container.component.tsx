@@ -1,4 +1,4 @@
-import ChartContainer from "./chartContainer.component"
+import ChartContainer from "./ChartContainer"
 
 const StatistisContainer = ()=>{
     return(<><ChartContainer /></>)
