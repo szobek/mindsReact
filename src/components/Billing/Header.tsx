@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { User } from '../../models/User';
-import './header.component.scss';
+import './Header.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 

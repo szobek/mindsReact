@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Paginator from "./paginator.component"
-import './invoiceList.component.scss'
+import Paginator from "./Paginator"
+import './InvoiceList.scss'
 
 const InvoiceListTable = () => {
     const [invoices, setInvoices] = useState<any[]>([])

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { User } from '../../models/User';
-import './setupcard.component.scss';
+import './Setupcard.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const Card = ({ title, content, userData, setUserData }: { title: string, content: string, userData: User | null, setUserData: any }) => {
+const SetupCard = ({ title, content, userData, setUserData }: { title: string, content: string, userData: User | null, setUserData: any }) => {
   const [modalAddressShow, setmodalAddressShow] = useState(false);
   const [formData, setFormData] = useState<any>({...userData});
 Object.assign(formData,userData);
@@ -118,4 +118,4 @@ Object.assign(formData,userData);
   </>
   )
 }
-export default Card
+export default SetupCard

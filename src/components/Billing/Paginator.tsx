@@ -1,4 +1,4 @@
-import './paginator.component.scss'
+import './Paginator.scss'
 
 const Paginator = ({ actualPage, modifyPage, allInvoicesPages }: { actualPage: number, modifyPage: any, allInvoicesPages: number }) => {
     let paginatorArray: any[] = []

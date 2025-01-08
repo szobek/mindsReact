@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import BillingContainer from './components/Billing/container.component'
+import BillingContainer from './components/Billing/BillingContainer'
 import Navbar from './components/Nav/navbar.component'
 import HomeContainer from './components/Home/container.component'
 import StatistisContainer from './components/Statistics/container.component'

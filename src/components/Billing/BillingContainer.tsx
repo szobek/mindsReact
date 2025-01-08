@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { User } from "../../models/User";
-import CardContainer from "./cardContainer.component";
-import BilllingHeader from "./header.component";
-import InvoiceListTable from "./invoiceList.component";
+import CardContainer from "./CardContainer";
+import BilllingHeader from "./Header";
+import InvoiceListTable from "./InvoiceList";
 
 const BillingContainer = () => {
     document.title = "Billing"
