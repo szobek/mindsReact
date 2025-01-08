@@ -1,5 +1,5 @@
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+
+import UniversalChart from '../universalChart.component';
 
 const LineChart = () => {
 
@@ -8,7 +8,7 @@ const LineChart = () => {
           type: 'line'
         },
         title: {
-          text: 'My chart'
+          text: ''
         },
         series: [
           {
@@ -19,7 +19,8 @@ const LineChart = () => {
 
     return (
         <div>
-            <HighchartsReact  highcharts={Highcharts} options={options} />
+          <UniversalChart options={options}/>
+            
         </div>
     )
 }
