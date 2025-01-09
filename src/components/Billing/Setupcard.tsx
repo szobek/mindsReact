@@ -3,6 +3,7 @@ import { User } from '../../models/User';
 import './Setupcard.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { settings } from '../../settings';
 
 const SetupCard = ({ title, content, userData, setUserData }: { title: string, content: string, userData: User | null, setUserData: any }) => {
   const [modalAddressShow, setmodalAddressShow] = useState(false);
@@ -23,7 +24,7 @@ Object.assign(formData,userData);
   const handleAddressClose = () => setmodalAddressShow(false);
   const handleAddressShow = () => setmodalAddressShow(true);
   const handleAddressSave = () => {
-    fetch('https://jsonplaceholder.typicode.com/users/5', {
+    fetch(`${settings.BASE_URL}/users/5`, {
       method: 'PUT',
       body: JSON.stringify(formData),
       headers: {
