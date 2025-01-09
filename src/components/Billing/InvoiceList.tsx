@@ -10,7 +10,7 @@ const InvoiceListTable = () => {
     const [allInvoicesRows, setAllInvoicesPages] = useState(0)
     const [selectedInvoices, setSelectedInvoices] = useState(0)
     const showInvoicePerPage: number = 7
-    const setPageNum=(num: React.MouseEvent<HTMLElement>) => {
+    const handleSetPageNumber=(num: React.MouseEvent<HTMLElement>) => {
         const page = (num.target as HTMLElement).dataset.page;
         setInvoiceListPageNumber(Number(page)) 
     }
@@ -103,7 +103,7 @@ const InvoiceListTable = () => {
                 })}
             </tbody>
         </table>
-        <Paginator allInvoicesPages={getAllPagesNumber(allInvoicesRows, showInvoicePerPage)} actualPage={invoiceListPageNumber} modifyPage={setPageNum} />
+        <Paginator allInvoicesPages={getAllPagesNumber(allInvoicesRows, showInvoicePerPage)} actualPage={invoiceListPageNumber} modifyPage={handleSetPageNumber} />
     </div>
     )
 }
