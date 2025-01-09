@@ -9,7 +9,6 @@ const InvoiceListTable = () => {
     const [invoiceListPageNumber, setInvoiceListPageNumber] = useState(1)
     const [allInvoicesRows, setAllInvoicesPages] = useState(0)
     const [selectedInvoices, setSelectedInvoices] = useState(0)
-    const showInvoicePerPage: number = 7
     const handleSetPageNumber=(num: React.MouseEvent<HTMLElement>) => {
         const page = (num.target as HTMLElement).dataset.page;
         setInvoiceListPageNumber(Number(page)) 
@@ -22,7 +21,7 @@ const InvoiceListTable = () => {
             })
     }
     const getInvoicesFromDb=()=> {
-        fetch(`${settings.BASE_URL}/todos?_page=${invoiceListPageNumber}&_limit=${showInvoicePerPage}`)
+        fetch(`${settings.BASE_URL}/todos?_page=${invoiceListPageNumber}&_limit=${settings.INVOICE_PER_PAGE}`)
             .then(response => response.json())
             .then(json => {
                 getAllRowFromDb()
@@ -46,7 +45,7 @@ const InvoiceListTable = () => {
     }
 
     const getAllPagesNumber = (allInvoicesRows: number, showInvoicePerPage: number) => {
-        return ((Math.round(allInvoicesRows / showInvoicePerPage) > 20)) ? 20 : Math.round(allInvoicesRows / showInvoicePerPage)
+        return ((Math.round(allInvoicesRows / showInvoicePerPage) > 20)) ? 20 : Math.round(allInvoicesRows / settings.INVOICE_PER_PAGE)
     }
 
     const handleCheckboxChange = () => {
@@ -61,9 +60,9 @@ const InvoiceListTable = () => {
 
     }
     const handleDownloadAllSeleccted = () => {
-        const ids = invoices
-            .filter((invoice) => invoice.selected)
-            .map((invoice) => invoice.id);
+        // const ids = invoices
+        //     .filter((invoice) => invoice.selected)
+        //     .map((invoice) => invoice.id);
         //   console.log(ids);
 
         if (selectedInvoices > 0) {
@@ -77,7 +76,7 @@ const InvoiceListTable = () => {
             <thead className="thead-light">
                 <tr>
                     <th>
-                        <input onChange={handleCheckboxChangeAll} type="checkbox" checked={selectedInvoices === showInvoicePerPage} />
+                        <input onChange={handleCheckboxChangeAll} type="checkbox" checked={selectedInvoices === settings.INVOICE_PER_PAGE} />
                     </th>
                     <th>Neve</th>
                     <th>Id </th>
@@ -103,7 +102,7 @@ const InvoiceListTable = () => {
                 })}
             </tbody>
         </table>
-        <Paginator allInvoicesPages={getAllPagesNumber(allInvoicesRows, showInvoicePerPage)} actualPage={invoiceListPageNumber} modifyPage={handleSetPageNumber} />
+        <Paginator allInvoicesPages={getAllPagesNumber(allInvoicesRows, settings.INVOICE_PER_PAGE)} actualPage={invoiceListPageNumber} modifyPage={handleSetPageNumber} />
     </div>
     )
 }
