@@ -52,7 +52,7 @@ const InvoiceListTable = () => {
         const allSelected = invoices.filter((invoice: Invoice) => invoice.selected)
         setSelectedInvoices(allSelected.length)
     }
-    const handleCheckboxChangeAll = (e: any) => {
+    const handleCheckboxChangeAll = (e: React.ChangeEvent<HTMLInputElement>) => {
         const checkedAll = e.target.checked
         const allSelected = invoices.map((invoice: Invoice) => { (checkedAll) ? invoice.selected = true : invoice.selected = false; return invoice })
         setInvoices(allSelected)
