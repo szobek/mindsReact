@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import Paginator from "./Paginator"
 import './InvoiceList.scss'
+import { Invoice } from "../../models/Invoice"
 
 const InvoiceListTable = () => {
-    const [invoices, setInvoices] = useState<any[]>([])
+    const [invoices, setInvoices] = useState<Invoice[]>([])
     const [invoiceListPageNumber, setInvoiceListPageNumber] = useState(1)
     const [allInvoicesRows, setAllInvoicesPages] = useState(0)
     const [selectedInvoices, setSelectedInvoices] = useState(0)
@@ -25,7 +26,7 @@ const InvoiceListTable = () => {
             .then(json => {
                 getAllRowFromDb()
                 setSelectedInvoices(0)
-                json.map((invoice: any) => {
+                json.map((invoice: Invoice) => {
                     invoice.selected = false
                 })
                 setInvoices(json);
@@ -38,7 +39,7 @@ const InvoiceListTable = () => {
     const handleDownloadSinge = () => {
         window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf');
     }
-    const handleSelectSingle = (invoice: any) => {
+    const handleSelectSingle = (invoice: Invoice) => {
         invoice.selected = !invoice.selected
         setInvoices([...invoices])
     }
@@ -48,14 +49,14 @@ const InvoiceListTable = () => {
     }
 
     const handleCheckboxChange = () => {
-        const allSelected = invoices.filter((invoice: any) => invoice.selected)
+        const allSelected = invoices.filter((invoice: Invoice) => invoice.selected)
         setSelectedInvoices(allSelected.length)
     }
     const handleCheckboxChangeAll = (e: any) => {
         const checkedAll = e.target.checked
-        const allSelected = invoices.map((invoice: any) => { (checkedAll) ? invoice.selected = true : invoice.selected = false; return invoice })
+        const allSelected = invoices.map((invoice: Invoice) => { (checkedAll) ? invoice.selected = true : invoice.selected = false; return invoice })
         setInvoices(allSelected)
-        setSelectedInvoices((invoices.filter((invoice: any) => invoice.selected)).length)
+        setSelectedInvoices((invoices.filter((invoice: Invoice) => invoice.selected)).length)
 
     }
     const handleDownloadAllSeleccted = () => {
@@ -85,7 +86,7 @@ const InvoiceListTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {invoices.map((invoice: any) => {
+                {invoices.map((invoice: Invoice) => {
                     return <tr key={invoice.id}>
                         <td >
                             <input onClick={() => {
