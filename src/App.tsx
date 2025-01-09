@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import BillingContainer from './components/Billing/BillingContainer'
+import BillingWrapper from './components/Billing/BillingWrapper'
 import Navbar from './components/Nav/Navbar'
 import HomeContainer from './components/Home/HomeContainer'
 import StatistisContainer from './components/Statistics/StatistisContainer'
@@ -15,7 +15,7 @@ function App() {
         <div className='main-content'>
           <Routes>
             <Route path="/" element={<HomeContainer />} />
-            <Route path="/billing" element={<BillingContainer />} />
+            <Route path="/billing" element={<BillingWrapper />} />
             <Route path="/statistics" element={<StatistisContainer />} />
           </Routes>
         </div>

@@ -4,7 +4,7 @@ import CardContainer from "./CardContainer";
 import BilllingHeader from "./Header";
 import InvoiceListTable from "./InvoiceList";
 
-const BillingContainer = () => {
+const BillingWrapper = () => {
     document.title = "Billing"
     const [userData, setUserData] = useState<User | null>(null)
     useEffect(() => {
@@ -19,4 +19,4 @@ const BillingContainer = () => {
         <InvoiceListTable />
     </>)
 }
-export default BillingContainer
+export default BillingWrapper
