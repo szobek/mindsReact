@@ -37,7 +37,7 @@ Object.assign(formData,userData);
       })
   }
 
-  function formatAddress() {
+  const formatAddress=()=> {
     return <ul>
       <li>Város: {userData?.address.city}</li>
       <li>Ir.szám: {userData?.address.zipcode}</li>
@@ -47,7 +47,7 @@ Object.assign(formData,userData);
     </ul>;
   }
 
-  function formatSubscription() {
+  const formatSubscription=()=> {
     return <div className='cover-div'></div>;
   }
 

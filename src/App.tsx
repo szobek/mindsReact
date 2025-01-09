@@ -5,7 +5,7 @@ import Navbar from './components/Nav/Navbar'
 import HomeWrapper from './components/Home/HomeWrapper'
 import StatisticsWrapper from './components/Statistics/StatisticsWrapper'
 
-function App() {
+const  App=()=> {
   return (
     <>
       <main className='d-flex'>

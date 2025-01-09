@@ -8,17 +8,17 @@ const InvoiceListTable = () => {
     const [allInvoicesRows, setAllInvoicesPages] = useState(0)
     const [selectedInvoices, setSelectedInvoices] = useState(0)
     const showInvoicePerPage: number = 7
-    function setPageNum(num: any) {
+    const setPageNum=(num: any) => {
         setinvoiceListPageNumber(num.target.dataset.page);
     }
-    function getAllRowFromDb() {
+    const getAllRowFromDb=()=> {
         fetch(`https://jsonplaceholder.typicode.com/todos`)
             .then(response => response.json())
             .then(json => {
                 setAllInvoicesPages(json.length);
             })
     }
-    function getInvoicesFromDb() {
+    const getInvoicesFromDb=()=> {
         fetch(`https://jsonplaceholder.typicode.com/todos?_page=${invoiceListPageNumber}&_limit=${showInvoicePerPage}`)
             .then(response => response.json())
             .then(json => {
