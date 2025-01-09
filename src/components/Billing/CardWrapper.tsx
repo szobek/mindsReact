@@ -3,7 +3,7 @@ import './CardContainer.scss';
 import { User } from "../../models/User";
 
 export type CardContainerProps = { userData: User | null, setUserData: any }
-const CardContainer = ({ userData, setUserData }: CardContainerProps) => {
+const CardWrapper = ({ userData, setUserData }: CardContainerProps) => {
   return (
     <div className="card-container">
       <SetupCard setUserData={null} title="Adatszolgáltatás" content="" userData={userData} />
@@ -12,4 +12,4 @@ const CardContainer = ({ userData, setUserData }: CardContainerProps) => {
     </div>
   )
 }
-export default CardContainer
+export default CardWrapper

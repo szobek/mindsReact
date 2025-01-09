@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { User } from "../../models/User";
-import CardContainer from "./CardContainer";
+import CardWrapper from "./CardWrapper";
 import BilllingHeader from "./Header";
 import InvoiceListTable from "./InvoiceList";
 
@@ -15,7 +15,7 @@ const BillingWrapper = () => {
     }, [])
     return (<>
         <BilllingHeader userData={userData} />
-        <CardContainer setUserData={setUserData} userData={userData}/>
+        <CardWrapper setUserData={setUserData} userData={userData}/>
         <InvoiceListTable />
     </>)
 }
