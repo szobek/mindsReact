@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Paginator from "./Paginator"
 import './InvoiceList.scss'
 import { Invoice } from "../../models/Invoice"
+import { settings } from "../../settings"
 
 const InvoiceListTable = () => {
     const [invoices, setInvoices] = useState<Invoice[]>([])
@@ -14,14 +15,14 @@ const InvoiceListTable = () => {
         setInvoiceListPageNumber(Number(page)) 
     }
     const getAllRowFromDb=()=> {
-        fetch(`https://jsonplaceholder.typicode.com/todos`)
+        fetch(`${settings.BASE_URL}/todos`)
             .then(response => response.json())
             .then(json => {
                 setAllInvoicesPages(json.length);
             })
     }
     const getInvoicesFromDb=()=> {
-        fetch(`https://jsonplaceholder.typicode.com/todos?_page=${invoiceListPageNumber}&_limit=${showInvoicePerPage}`)
+        fetch(`${settings.BASE_URL}/todos?_page=${invoiceListPageNumber}&_limit=${showInvoicePerPage}`)
             .then(response => response.json())
             .then(json => {
                 getAllRowFromDb()
@@ -37,7 +38,7 @@ const InvoiceListTable = () => {
     }, [invoiceListPageNumber])
 
     const handleDownloadSinge = () => {
-        window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf');
+        window.open(settings.DUMMY_PDF_URL);
     }
     const handleSelectSingle = (invoice: Invoice) => {
         invoice.selected = !invoice.selected
@@ -66,7 +67,7 @@ const InvoiceListTable = () => {
         //   console.log(ids);
 
         if (selectedInvoices > 0) {
-            window.open('https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip');
+            window.open(settings.DUMMY_ZIP_URL);
         }
     }
 
