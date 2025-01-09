@@ -3,6 +3,7 @@ import { User } from '../../models/User';
 import './Header.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { settings } from '../../settings';
 
 const BilllingHeader = ({ userData }: { userData: User | null }) => {
   const [modalShow, setmodalShow] = useState(false);
@@ -11,7 +12,7 @@ const BilllingHeader = ({ userData }: { userData: User | null }) => {
   const handleSave = () => {
     if (userData) {
       userData.phone = "256984562365"
-      fetch('https://jsonplaceholder.typicode.com/users/5', {
+      fetch(`${settings.BASE_URL}/users/5`, {
         method: 'PUT',
         body: JSON.stringify(userData),
         headers: {
