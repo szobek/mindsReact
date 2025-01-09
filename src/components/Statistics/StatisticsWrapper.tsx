@@ -1,6 +1,6 @@
 import ChartWrapper from "./ChartWrapper"
 
-const StatistisContainer = ()=>{
+const StatisticsWrapper = ()=>{
     return(<ChartWrapper />)
 }
-export default StatistisContainer
+export default StatisticsWrapper

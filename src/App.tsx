@@ -3,7 +3,7 @@ import './App.css'
 import BillingWrapper from './components/Billing/BillingWrapper'
 import Navbar from './components/Nav/Navbar'
 import HomeWrapper from './components/Home/HomeWrapper'
-import StatistisContainer from './components/Statistics/StatistisContainer'
+import StatisticsWrapper from './components/Statistics/StatisticsWrapper'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeWrapper />} />
             <Route path="/billing" element={<BillingWrapper />} />
-            <Route path="/statistics" element={<StatistisContainer />} />
+            <Route path="/statistics" element={<StatisticsWrapper />} />
           </Routes>
         </div>
       </main>
