@@ -1,5 +1,5 @@
 import SetupCard from "./Setupcard";
-import './CardContainer.scss';
+import './CardWrapper.scss';
 import { User } from "../../models/User";
 
 export type CardContainerProps = { userData: User | null, setUserData: any }
