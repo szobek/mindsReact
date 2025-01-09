@@ -1,10 +1,10 @@
 import LineChart from './LineChart/LineChart';
 import ColumnChart from './ColumnChart/ColumnChart';
-import './ChartContainer.scss';
+import './ChartWrapper.scss';
 import PieChart from './PieChart/PieChart';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart';
 
-const ChartContainer = () => {
+const ChartWrapper = () => {
     return (
         <div className='chart-container'>
             <h1>Statisztika</h1>
@@ -30,4 +30,4 @@ const ChartContainer = () => {
     )
 }
 
-export default ChartContainer;
+export default ChartWrapper;

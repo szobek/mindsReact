@@ -1,6 +1,6 @@
-import ChartContainer from "./ChartContainer"
+import ChartWrapper from "./ChartWrapper"
 
 const StatistisContainer = ()=>{
-    return(<ChartContainer />)
+    return(<ChartWrapper />)
 }
 export default StatistisContainer
