@@ -7,6 +7,7 @@ import StatisticsWrapper from './components/Statistics/StatisticsWrapper'
 import VoluntariesWrapper from './components/Billing/VoluntariesWrapper'
 import LineChartPage from './components/Statistics/LineChart/LineChartPage'
 import PieChartPage from './components/Statistics/PieChart/PieChartPage'
+import SpiderwebChartPage from './components/Statistics/SpiderWebChart/SpiderwebChartPage'
 
 const  App=()=> {
   return (
@@ -23,6 +24,7 @@ const  App=()=> {
             <Route path="/statistics" element={<StatisticsWrapper />} />
             <Route path="/statistics/linechart" element={<LineChartPage />} />
             <Route path="/statistics/piechart" element={<PieChartPage />} />
+            <Route path="/statistics/spiderwebchart" element={<SpiderwebChartPage />} />
           </Routes>
         </div>
       </main>
