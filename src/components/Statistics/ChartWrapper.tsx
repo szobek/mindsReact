@@ -28,7 +28,21 @@ const ChartWrapper = () => {
                 </Card>
             </div>
             <div className="chart-card">
-                <PieChart />
+            <Card>
+                    <Card.Header>
+                    <PieChart />
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Title>Pie chart</Card.Title>
+                        <Card.Text>
+                            
+                        </Card.Text>
+                        <Button onClick={()=>{
+                            navigate('/statistics/piechart')
+                        }} variant="primary">Go chart </Button>
+                    </Card.Body>
+                </Card>
+                
             </div>
             <div className="chart-card">
                 <SpiderwebChart />
