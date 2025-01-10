@@ -14,7 +14,7 @@ const ChartWrapper = () => {
             <div className="chart-card double">
                 <Card>
                     <Card.Header>
-                        <LineChart />
+                        <LineChart previewChart={true}/>
                     </Card.Header>
                     <Card.Body>
                         <Card.Title>Line chart</Card.Title>
