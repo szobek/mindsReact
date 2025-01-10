@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { settings } from "../../settings"
 import './VoluntariesWrapper.scss'
 import { useState } from "react";
+import { getVoluntaryById } from "../../functions";
 
 const VoluntariesWrapper = () => {
     const [selectedOption,setSelectedOption] = useState(0);
@@ -12,6 +13,8 @@ const VoluntariesWrapper = () => {
     }
     const handleClickOnVoluntryOption=(id:number)=>{
 setSelectedOption(id);
+console.log(getVoluntaryById(id));
+
     }
     return (
         <div>
