@@ -13,7 +13,7 @@ const Navbar = () => {
     to={item.url}
     className="nav-link-item"
   >
-    <img src={`./assets/icons/${item.icon}`} alt="" /> { item.name}
+    <img src={`/assets/icons/${item.icon}`} alt="" /> { item.name}
   </NavLink>
   );
   return (
