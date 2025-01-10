@@ -3,13 +3,29 @@ import ColumnChart from './ColumnChart/ColumnChart';
 import './ChartWrapper.scss';
 import PieChart from './PieChart/PieChart';
 import SpiderwebChart from './SpiderWebChart/SpiderwebChart';
+import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ChartWrapper = () => {
+    const navigate  = useNavigate();
     return (
         <div className='chart-container'>
             <h1>Statisztika</h1>
             <div className="chart-card double">
-                <LineChart />
+                <Card>
+                    <Card.Header>
+                        <LineChart />
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Title>Line chart</Card.Title>
+                        <Card.Text>
+                            
+                        </Card.Text>
+                        <Button onClick={()=>{
+                            navigate('/statistics/linechart')
+                        }} variant="primary">Go chart </Button>
+                    </Card.Body>
+                </Card>
             </div>
             <div className="chart-card">
                 <PieChart />

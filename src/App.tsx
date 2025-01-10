@@ -5,6 +5,7 @@ import Navbar from './components/Nav/Navbar'
 import HomeWrapper from './components/Home/HomeWrapper'
 import StatisticsWrapper from './components/Statistics/StatisticsWrapper'
 import VoluntariesWrapper from './components/Billing/VoluntariesWrapper'
+import LineChartPage from './components/Statistics/LineChart/LineChartPage'
 
 const  App=()=> {
   return (
@@ -19,6 +20,7 @@ const  App=()=> {
             <Route path="/billing" element={<BillingWrapper />} />
             <Route path="/billing/voluntary" element={<VoluntariesWrapper />} />
             <Route path="/statistics" element={<StatisticsWrapper />} />
+            <Route path="/statistics/linechart" element={<LineChartPage />} />
           </Routes>
         </div>
       </main>
