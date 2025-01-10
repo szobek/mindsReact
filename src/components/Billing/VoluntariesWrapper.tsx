@@ -30,7 +30,7 @@ setSelectedOption(id);
                             <p className="voluntary-text">{voluntary.text}</p>
                         </div>
                         <div className="voluntary-radio-wrapper">
-                            <input type="radio" name="" id="" />
+                            <input type="radio" checked={selectedOption===voluntary.id} name="" id="" />
                         </div>
                     </div>
                 )
