@@ -1,13 +1,15 @@
 .single-voluntary {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border: 2px solid #20B24D;
+    border: 2px solid #9fa3a0;
 color:  #1C1D1F;
 margin: 20px 0;
 border-radius: 10px;
 padding: 10px;
+position: relative;
     h2 {
         //styleName: Body 2/Bold;
         font-family: Inter;
@@ -43,6 +45,15 @@ padding: 10px;
         p{
             margin: 0;
         }
+    }
+
+    .voluntary-radio-wrapper{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    &.selected-option{
+        border: 2px solid rgb(152, 221, 152);
     }
 
 
