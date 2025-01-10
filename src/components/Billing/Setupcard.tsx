@@ -4,11 +4,13 @@ import './Setupcard.scss';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { settings } from '../../settings';
+import { useNavigate } from 'react-router-dom';
 
-const SetupCard = ({ title, content, userData, setUserData }: { title: string, content: string, userData: User | null, setUserData: any }) => {
+const SetupCard = ({ title, content, userData, setUserData,id }: { title: string, content: string, userData: User | null, setUserData: any,id:number }) => {
   const [modalAddressShow, setmodalAddressShow] = useState(false);
   const [formData, setFormData] = useState<any>({...userData});
-Object.assign(formData,userData);
+  const navigate = useNavigate();
+  Object.assign(formData,userData);
   const handleChange = (event: any) => {
     const { name, value } = event.target;
     if (name.includes('.')) {
@@ -21,6 +23,9 @@ Object.assign(formData,userData);
     }
     setFormData((prevFormData: any) => ({ ...prevFormData, ...formData }));
   };
+  const handleClickOnVoluntaryEdit =()=>{
+    navigate("/billing/voluntary");
+  }
   const handleAddressClose = () => setmodalAddressShow(false);
   const handleAddressShow = () => setmodalAddressShow(true);
   const handleAddressSave = () => {
@@ -57,8 +62,17 @@ Object.assign(formData,userData);
       {(title === 'Előfizetés') ? formatSubscription() : ""}
       <div className="setupcard-title"><p>{title}</p>
         <button className='base-btn' onClick={() => {
-          if (title === 'Cím') {
+          if (id === 2) {
             handleAddressShow()
+          }
+          switch (id) {
+            case 1:
+              handleClickOnVoluntaryEdit()
+              break;
+            case 2:
+              handleAddressShow()
+              break;
+              default:  break;
           }
         }}>Szerkesztés</button></div>
       <div className="setupcard-body">{(title === 'Cím') ? formatAddress() : content}</div>

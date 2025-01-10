@@ -4,6 +4,7 @@ import BillingWrapper from './components/Billing/BillingWrapper'
 import Navbar from './components/Nav/Navbar'
 import HomeWrapper from './components/Home/HomeWrapper'
 import StatisticsWrapper from './components/Statistics/StatisticsWrapper'
+import VoluntariesWrapper from './components/Billing/VoluntariesWrapper'
 
 const  App=()=> {
   return (
@@ -16,6 +17,7 @@ const  App=()=> {
           <Routes>
             <Route path="/" element={<HomeWrapper />} />
             <Route path="/billing" element={<BillingWrapper />} />
+            <Route path="/billing/voluntary" element={<VoluntariesWrapper />} />
             <Route path="/statistics" element={<StatisticsWrapper />} />
           </Routes>
         </div>
