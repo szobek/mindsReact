@@ -30,7 +30,16 @@ const VoluntariesWrapper = () => {
                 <div className="back-button-wrapper">
                     <button className="base-btn" onClick={handleClickToBilling}>Vissza a számlázásra</button>
                 </div>
-                {voluntaries}
+                <div className='voluntaries-wrapper-content'>
+                    <div className='voluntaries-wrapper-balance'>
+                        <p>Választható opciók</p>
+                        <p>További információk a fogyasztási adatok megosztásáról</p>
+                        itt lesz a balance
+                    </div>
+                    <div className="voluntary-list">
+                        {voluntaries}
+                    </div>
+                </div>
             </div>
         </>
     )

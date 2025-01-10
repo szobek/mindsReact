@@ -3,8 +3,17 @@
     text-align: right;
 }
 .voluntaries-wrapper{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 30px;
+    .voluntaries-wrapper-balance{
+        
+    }
+    .voluntaries-wrapper-content{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 }
