@@ -1,9 +1,10 @@
+import ChartTitle from "../ChartTitle";
 import LineChart from "./LineChart";
 
 const LineChartPage = () => {
     return (
         <div>
-            <h1>Line Chart Page</h1>
+            <ChartTitle title='Line chart' />
             <LineChart />   
         </div>
     );  

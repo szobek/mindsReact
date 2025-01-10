@@ -1,8 +1,9 @@
+import ChartTitle from "../ChartTitle";
 import PieChart from "./PieChart";
 
 const PieChartPage = () => {
     return (<>
-        <div>PieChartPage</div>
+        <ChartTitle title='Pie chart' />
         <PieChart />
     </>
     )
