@@ -7,7 +7,9 @@ export type VoluntaryType = {
 }
 
 const VoluntaryOption = ({ voluntary,selectedOption,handleClickOnVoluntryOption }: VoluntaryType) => {
-   const handleOnChangeOnOption=()=>{}
+   const handleOnChangeOnOption=(voluntary:Voluntary)=>{
+    handleClickOnVoluntryOption(voluntary.id);
+   }
     return (
         <div>
             <div className={`single-voluntary ${(selectedOption === voluntary.id) ? "selected-option" : ""}`} onClick={() => {
@@ -22,7 +24,13 @@ const VoluntaryOption = ({ voluntary,selectedOption,handleClickOnVoluntryOption 
                     <p className="voluntary-text">{voluntary.text}</p>
                 </div>
                 <div className="voluntary-radio-wrapper">
-                    <input type="radio" checked={selectedOption === voluntary.id} name="" id="" />
+                    <input type="radio" 
+                    checked={selectedOption === voluntary.id} 
+                    name="voluntary-option" 
+                    id="" 
+                    onChange={()=>{
+                        handleOnChangeOnOption(voluntary)
+                    }} />
                 </div>
             </div>
         </div>
